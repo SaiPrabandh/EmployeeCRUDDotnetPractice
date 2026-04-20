@@ -1,0 +1,25 @@
+﻿@model List<Employee>
+
+<h2>Employee List</h2>
+
+<table border="1">
+    <tr>
+        <th>Name</th>
+        <th>Department</th>
+        <th>Salary</th>
+        <th>Actions</th>
+    </tr>
+
+    @foreach (var emp in Model)
+    {
+        <tr>
+            <td>@emp.Name</td>
+            <td>@emp.Department</td>
+            <td>@emp.Salary</td>
+            <td>
+                <a href="/Home/Edit/@emp.Id">Edit</a> |
+                <a href="/Home/Delete/@emp.Id">Delete</a>
+            </td>
+        </tr>
+    }
+</table>
